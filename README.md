@@ -63,3 +63,5 @@ This project was completed as part of our **PG Diploma in Big Data Analytics** a
 💡 *Why this project?*  
 We chose **customer segmentation** because it merges our backgrounds: Shalini brought business intuition and logic, while I had experience tailoring conservation giving programs for diverse client profiles.  
 Understanding **clusters + customer behaviour and nuances** wasn’t just academic, it’s exactly the kind of insight that drives smarter marketing, personalized outreach, meaningful client relationships (with the bonus of cool talking points in an interview!)
+
+*AI DISCLOSURE: Some documentation, formatting, and report structuring support was assisted by generative AI tools (Perplexity.ai). All analysis, coding, and interpretation are our own.*

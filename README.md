@@ -28,7 +28,7 @@ Beyond clustering, we built a **cluster-driven recommendation logic**:
 - **DBSCAN/HDBSCAN** — [`03_dbscan_hdbscan.ipynb`](notebooks/03_dbscan_hdbscan.ipynb)
 
 ## Data & Features
-- 4,067 customers × 16 engineered features → **z-scored**, then **PCA to 6 components**, ~**81%** variance retained. The PCA matrix feeds all three clustering methods.
+- 4,067 customers × 16 engineered features -> **z-scored** + outlier freed, then **PCA to 6 components**, ~**81%** variance retained. The PCA matrix feeds all three clustering methods.
 
 ## Results (on the 4,067×6 PCA matrix)
 | Model                                | #Clusters (noise) | Silhouette | Calinski–Harabasz | Davies–Bouldin | Take |
@@ -37,7 +37,7 @@ Beyond clustering, we built a **cluster-driven recommendation logic**:
 | **Agglomerative (complete, k=3)**    | 3 (0%)            | **0.367**  | 507.64            | 1.27           | Highest cohesion; supports k=3 decision. |
 | **HDBSCAN (min_cluster_size=50)**    | 2 (+ **7.8%** noise) | 0.260   | 852.42            | **1.15**       | Great for outlier flagging; under-segments for marketing. 
 
-**Why PCA?** Removes redundancy, speeds clustering, keeps structure; 6 PCs capture ~81% while remaining interpretable via loadings. 
+PCA removes redundancy, speeds clustering, keeps structure; 6 PCs captured ~81% while remaining interpretable via loadings. 
 
 ## Reproduce
 ```bash

@@ -7,19 +7,19 @@ After imputing anomalies and transforming raw transactions into a customer-centr
 
 Cluster evaluation is guided holistically by Silhouette Score, Calinski-Harabasz Index, and Davies-Bouldin Index. Optimal model selection, based on the peak silhouette value of 0.53, yields three behaviourally distinct clusters. These segments are profiled to reveal purchasing propensities and lifetime-value potential, and are subsequently integrated into a cluster-based recommendation engine that promotes top-selling yet unpurchased products within each cluster. 
 
-The proposed framework demonstrates a replicable, end-to-end, multi-intelligence system for online retailers to refine marketing campaigns, elevate personalisation, and stimulate revenue growth through data-driven customer insights.
+The proposed framework demonstrates a replicable, multi-model insight generation framework for online retailers to refine marketing campaigns, elevate personalisation, and stimulate revenue growth through data-driven customer insights.
 
 ## Keywords
-*RFM Analysis • Unsupervised Learning • K-Means Clustering • Hierarchical Agglomerative Clustering • DBSCAN • HDBSCAN • Silhouette Score • Customer Segmentation • Recommendation System • Content-Based Filtering • Online Retail Analytics*
+*RFM Analysis • Unsupervised Learning • K-Means Clustering • Hierarchical Agglomerative Clustering • DBSCAN • HDBSCAN • Silhouette Score • Customer Segmentation • Recommendation System • Cluster-Based Filtering • Online Retail Analytics*
 
 ---
 
 ## **TL;DR.** 
 We cluster ~4k retail customers using a PCA-compressed feature set and compare three methods.  
-*Final take:* **K-Means (k=3)** gives the clearest three actionable segments; Agglomerative corroborates the structure; HDBSCAN is best kept for anomaly surfacing.
+*Final take:* **K-Means (k=3)** gives the clearest three actionable segments; Agglomerative corroborates the structure; HDBSCAN is best kept for anomaly detection.
 
 Beyond clustering, we built a **cluster-driven recommendation logic**:
-  - Top-3 product not-yet-bought suggestions tailored for each cluster profile.
+  - Top-3 not-yet-bought product suggestions tailored for each cluster profile.
 
 
 ## Notebooks
@@ -33,9 +33,9 @@ Beyond clustering, we built a **cluster-driven recommendation logic**:
 ## Results (on the 4,067×6 PCA matrix)
 | Model                                | #Clusters (noise) | Silhouette | Calinski–Harabasz | Davies–Bouldin | Take |
 |-------------------------------------|-------------------:|-----------:|------------------:|---------------:|------|
-| **K-Means (k=3)**                    | 3 (0%)            | **0.236**  | **1257.17**       | 1.37           | Tight, distinct three-segment split. :contentReference[oaicite:1]{index=1} |
+| **K-Means (k=3)**                    | 3 (0%)            | **0.236**  | **1257.17**       | 1.37           | Tight, distinct three-segment split. |
 | **Agglomerative (complete, k=3)**    | 3 (0%)            | **0.367**  | 507.64            | 1.27           | Highest cohesion; supports k=3 decision. |
-| **HDBSCAN (min_cluster_size=50)**    | 2 (+ **7.8%** noise) | 0.260   | 852.42            | **1.15**       | Great for outlier flagging; under-segments for marketing. 
+| **HDBSCAN (min_cluster_size=50)**    | 2 (+ **7.8%** noise) | 0.260   | 852.42            | **1.15**       | Great for outlier flagging; under-segments for marketing. |
 
 PCA removes redundancy, speeds clustering, keeps structure; 6 PCs captured ~81% while remaining interpretable via loadings. 
 
@@ -62,6 +62,6 @@ This project was completed as part of our **PG Diploma in Big Data Analytics** a
 
 💡 *Why this project?*  
 We chose **customer segmentation** because it merges our backgrounds: Shalini brought business intuition and logic, while I had experience tailoring conservation giving programs for diverse client profiles.  
-Understanding **clusters + customer behaviour and nuances** wasn’t just academic, it’s exactly the kind of insight that drives smarter marketing, personalized outreach, meaningful client relationships (with the bonus of cool talking points in an interview!)
+Understanding **clusters + customer behaviour and nuances** wasn’t just academic, it’s exactly the kind of insight that drives smarter marketing, personalized outreach, meaningful client relationships (with the bonus of business-relevant talking points in an interview!)
 
 *AI DISCLOSURE: Some documentation, formatting, and report structuring support was assisted by generative AI tools (Perplexity.ai). All analysis, coding, and interpretation are our own.*

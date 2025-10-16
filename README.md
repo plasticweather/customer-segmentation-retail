@@ -1,13 +1,13 @@
 # Customer Segmentation on Online Retail (K-Means, Agglomerative, DBSCAN/HDBSCAN) + Cluster-Based Recommendations
 
 ## Abstract 
-This project presents a comprehensive machine-learning framework for enhancing online retail analytics through data-driven customer segmentation and targeted product recommendation. Leveraging the publicly available 2010–2011 transactional dataset from a UK-based retailer, the study implements an end-to-end pipeline spanning rigorous data cleaning, feature engineering, and unsupervised learning techniques.
+This project presents a comprehensive machine-learning framework for enhancing online retail analytics through data-driven customer segmentation and targeted product recommendation. Leveraging the publicly available 2010–2011 transactional dataset from a UK-based retailer, the study implements rigorous data cleaning, feature engineering, and unsupervised learning techniques.
 
-After imputing anomalies and transforming raw transactions into a customer-centric matrix of normalised RFM metrics and behavioural attributes, a multi-model clustering strategy is applied. K-Means supplies an interpretable baseline; Hierarchical Agglomerative Clustering offers a nuanced multilevel perspective on customer relations; and DBSCAN/HDBSCAN detect low-density outliers to preserve segment purity.
+After imputing anomalies and transforming raw transactions into a customer-centric matrix of normalised RFM metrics and behavioural attributes, a multi-model clustering strategy is applied. K-Means supplies an interpretable baseline; Hierarchical Agglomerative Clustering offers a nuanced multilevel perspective on customer behavior; and DBSCAN/HDBSCAN detect low-density outliers to preserve segment purity.
 
 Cluster evaluation is guided holistically by Silhouette Score, Calinski-Harabasz Index, and Davies-Bouldin Index. Optimal model selection, based on the peak silhouette value of 0.53, yields three behaviourally distinct clusters. These segments are profiled to reveal purchasing propensities and lifetime-value potential, and are subsequently integrated into a cluster-based recommendation engine that promotes top-selling yet unpurchased products within each cluster. 
 
-The proposed framework demonstrates a replicable, multi-model insight generation framework for online retailers to refine marketing campaigns, elevate personalisation, and stimulate revenue growth through data-driven customer insights.
+The proposed framework demonstrates a replicable, multi-model insight generation framework for online retailers to refine marketing campaigns, elevate personalisation, and stimulate revenue growth through RFM analysis as well as data-driven customer insights.
 
 ## Keywords
 *RFM Analysis • Unsupervised Learning • K-Means Clustering • Hierarchical Agglomerative Clustering • DBSCAN • HDBSCAN • Silhouette Score • Customer Segmentation • Recommendation System • Cluster-Based Filtering • Online Retail Analytics*
@@ -16,10 +16,10 @@ The proposed framework demonstrates a replicable, multi-model insight generation
 
 ## **TL;DR.** 
 We cluster ~4k retail customers using a PCA-compressed feature set and compare three methods.  
-*Final take:* **K-Means (k=3)** gives the clearest three actionable segments; Agglomerative corroborates the structure; HDBSCAN is best kept for anomaly detection.
+*Final take:* **K-Means (k=3)** gives the clearest three actionable segments; Agglomerative corroborates and zooms in on the K-Means clusters structure; HDBSCAN is best kept for anomaly detection.
 
 Beyond clustering, we built a **cluster-driven recommendation logic**:
-  - Top-3 not-yet-bought product suggestions tailored for each cluster profile.
+  - Top-3 not-yet-bought product suggestions tailored for each new customer based on its assigned cluster's profile.
 
 
 ## Notebooks
